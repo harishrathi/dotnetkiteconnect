@@ -1213,9 +1213,9 @@ namespace KiteConnect
         /// Adds extra headers to request
         /// </summary>
         /// <param name="Req">Request object to add headers</param>
-        private void AddExtraHeaders(ref HttpWebRequest Req)
+        protected virtual void AddExtraHeaders(ref HttpWebRequest Req)
         {
-            var KiteAssembly = System.Reflection.Assembly.GetAssembly(typeof(Kite));
+            var KiteAssembly = Assembly.GetAssembly(typeof(Kite));
             if (KiteAssembly != null)
                 Req.UserAgent = "KiteConnect.Net/" + KiteAssembly.GetName().Version;
 
